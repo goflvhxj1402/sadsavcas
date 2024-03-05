@@ -1,0 +1,334 @@
+@charset "utf-8";
+
+/* 초기화 */
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, a, ul, li, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+address {
+    font-style: normal;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    margin: -1px;
+    clear: rect(0 0 0 0);
+
+    overflow: hidden;
+}
+
+/* 공통속성 */
+@font-face {
+    font-family: "SUI";
+    src: local(※),
+        url(../webfont/segoeui.ttf),
+        url(../webfont/segoeui.woff);
+}
+
+body {
+    font-family: "SUI";
+    min-width: 1200px;
+}
+/* header */
+#header{
+    height: 100px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+#header h1{
+    padding-left: 30px;
+}
+#header h1 a{
+    display: block;
+
+    width: 249px;
+    height: 50px;
+
+    background-image: url(../images/Logo_header.png);
+    background-repeat: no-repeat;
+
+    text-indent: -150%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* 멤버십 */
+#membership{
+    order: 1;
+}
+#membership ul{
+    display: flex;
+    color: black;
+}
+#membership ul li{
+    padding: 0 9px;   
+}
+#membership ul li a{
+    padding: 0 9px;
+    font-size: 14px;
+    color: black;
+}
+#membership li.goLogin{
+    position: relative; 
+}
+#membership li.goLogin::after{
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 0;
+    width: 1px;
+    height: 11px;
+    background-color: black;
+}
+/* gnb */
+#gnb ul{
+    display: flex;
+}
+#gnb ul li{
+    margin: 0 5px;
+}
+#gnb ul li a{
+    padding: 0 10px;
+    color: black;
+    text-transform: uppercase;
+}
+#gnb ul li a:hover{
+    padding-bottom: 10px;
+    border-bottom: 3px solid skyblue;
+}
+/* main */
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    border: 1px solid black;
+}
+#slogan{
+    width: 100%;
+    height: 363px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-image: url(../images/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#slogan p{
+    width: 600px;
+
+    font-size: 50px;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+#slogan a{
+    display: block;
+
+    width: 156px;
+
+    line-height: 40px;
+
+    background-color: red;
+
+    color: white;
+}
+/* solution */
+#solutionWrap{
+    width: 100%;
+    height: 307px;
+
+    background-color: #EBEBEB;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+.solution{
+    width: 30%;
+    height: 200px;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 20px;
+}
+.solution div{
+    width: 15%;
+    height: 30%;
+
+    background-image: url(../images/Earth.png);
+    background-repeat: no-repeat;
+    background-size: contain; 
+    align-self: center;
+}
+.solution h3, p{
+    color: black;
+}
+/* custom */
+#customerBoard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-evenly;
+
+    padding-top: 20px;
+}
+#securityNews{
+    position: relative;
+}
+#customerBoard h3{
+    padding: 0 0 20px 10px;
+    border-bottom: 1px solid black;
+    font-weight: normal;
+    font-size: 1.75em;
+    font-style: normal;
+
+    text-transform: uppercase;
+}
+.more{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    transition: 0.5s;
+}
+.more::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+
+    border-top: 1px solid black;
+}
+.more::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    height: 100%;
+
+    border-left: 1px solid black;
+}
+.more:hover{
+    transform: rotate(45deg);
+}
+#securityNews dl{
+    padding: 20px;
+}
+#securityNews dt, #securityNews dl{
+    margin-bottom: 15px;
+    font-size: 20px;   
+}
+#securityNews dt{
+    font-weight: bold;
+}
+#securityNews h3 span{
+    color: red;
+}
+#securityNews, #new{
+    width: 30%;
+    position: relative;
+}
+#securityNews{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;  
+}
+/* news&notice */
+#new ul li{
+    padding: 15px 20px;
+    border-bottom: 1px solid black;
+}
+#new ul li a{
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#new ul li span{
+    font-size: 14px;
+    color: gray;
+}
+/* footer */
+#footer{
+    padding: 20px 50px;
+    background-image: url(../images/logo_footer.png);
+    background-repeat: no-repeat;
+    background-position: center left 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+}
+#footer .info{
+    margin-left: 140px;
+}
+.sns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.sns li{
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    margin-right: 10px;
+}
+.sns li a{
+    display: block;
+
+    width: 33px;
+    height: 33px;
+
+    background-image: url(../images/bg_sns.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#faceBook a{
+    background-position: left;
+}
+#twitter a{
+    background-position: right;
+}
